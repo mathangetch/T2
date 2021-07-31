@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #EBEBD3;
+        }
+
+        #jm {
+            background-color: #F4D35E;
+        }
+
+        #tablet {
+            background-color: #EBEBD3;
+        }
+    </style>
+    <title>Choice Of Food</title>
+</head>
+
+<body>
+    <div class="rounded">
+        <div class="jumbotron" style="text-align: center;" id="jm">
+            <h1 class="display-4">Food, world!</h1>
+            <p class="lead">Healthy Menu for Happy Life!</p>
+        </div>
+    </div>
+    <div class="container mt-5 rounded">
+        <div class="row">
+            <div class="col-sm-4" id="tablet"></div>
+            <div class="col-sm-4 bg-success rounded mt-1">
+                <h2 class="display-5 text-center">Choice Of Health</h2>
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="FN" placeholder="Enter First Name" name="fname">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="LN" placeholder="Enter Last Name" name="lname">
+                    </div>
+                    <div class="form-group">
+                        <label for="address line 1">Address Line 1</label>
+                        <input type="text" class="form-control" id="AD1" name="address line 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="address line 2">Address Line 2</label>
+                        <input type="text" class="form-control" id="AD2" name="address line 2">
+                    </div>
+                    <div class="form-group">
+                        <label for="Pincode">Pincode</label>
+                        <input type="number" class="form-control" id="PIN" name="Pincode" minlength="6" maxlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender </label>
+                        <select class="form-control" id="gender" name="gender">
+                            <option>Nil</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="combo1">Health combo-1 </label>
+                        <select class="form-control" id="combo1" name="combo1">
+                            <option>Nil</option>
+                            <option>Wooden-Pan-Pizza</option>
+                            <option>Chicken-Burger</option>
+                            <option>Cheesy-Pastha</option>
+                            <option>Mexican-Noodle</option>
+                            <option>Tango-Macroni</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="combo2">Health combo-2 </label>
+                        <select class="form-control" id="combo2" name="combo2">
+                            <option>Nil</option>
+                            <option>Wooden-Pan-Pizza</option>
+                            <option>Chicken-Burger</option>
+                            <option>Cheesy-Pastha</option>
+                            <option>Mexican-Noodle</option>
+                            <option>Tango-Macroni</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="combo3">Health combo-3 </label>
+                        <select class="form-control" id="combo3" name="combo3">
+                            <option>Nil</option>
+                            <option>Wooden-Pan-Pizza</option>
+                            <option>Chicken-Burger</option>
+                            <option>Cheesy-Pastha</option>
+                            <option>Mexican-Noodle</option>
+                            <option>Tango-Macroni</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" class="form-control" id="state" name="state">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" name="country">
+                    </div>
+                    <button type="submit" onclick="display()" id="submit" class="btn btn-primary">Submit</button>
+                    <button type="Reset" class="btn btn-primary">Reset</button>
+                </form>
+            </div>
+            <div class="col-sm-4" id="tablet"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 bg-warning rounded mt-5 mb-5">
+                <h2 class="display-5 text-center">Order Details</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Address Line 1</th>
+                            <th>Address Line 2</th>
+                            <th>Pincode</th>
+                            <th>Gender</th>
+                            <th>Recipie-1</th>
+                            <th>Recipie-2</th>
+                            <th>Recipie-3</th>
+                            <th>State</th>
+                            <th>country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="FName"></td>
+                            <td id="SName"></td>
+                            <td id="AL1"></td>
+                            <td id="AL2"></td>
+                            <td id="PIN1"></td>
+                            <td id="gen"></td>
+                            <td id="REC-1"></td>
+                            <td id="REC-2"></td>
+                            <td id="REC-3"></td>
+                            <td id="STATE"></td>
+                            <td id="COUNTRY"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function display() {
+            document.getElementById("FName").innerHTML = document.getElementById("FN").value;
+            document.getElementById("SName").innerHTML = document.getElementById("LN").value;
+            document.getElementById("AL1").innerHTML = document.getElementById("AD1").value;
+            document.getElementById("AL2").innerHTML = document.getElementById("AD2").value;
+            document.getElementById("PIN1").innerHTML = document.getElementById("PIN").value;
+            document.getElementById("gen").innerHTML = document.getElementById("gender").value;
+            document.getElementById("REC-1").innerHTML = document.getElementById("combo1").value;
+            document.getElementById("REC-2").innerHTML = document.getElementById("combo2").value;
+            document.getElementById("REC-3").innerHTML = document.getElementById("combo3").value;
+            document.getElementById("STATE").innerHTML = document.getElementById("state").value;
+            document.getElementById("COUNTRY").innerHTML = document.getElementById("country").value;
+
+        }
+    </script>
+</body>
+
+</html>
